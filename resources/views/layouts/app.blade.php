@@ -142,15 +142,6 @@
         </footer>
 
         <script src="{{ mix('js/app.js') }}"></script>
-        <script type="text/javascript">
-$(window).scroll(function() {
-  let scrollTop = $(this).scrollTop();
-  let zoom = 100 + (scrollTop / 15);
-
-  $('#lead-bg').css('background-size', zoom+'%');
-});
-
-        </script>
         @stack('scripts')
     </body>
 </html>

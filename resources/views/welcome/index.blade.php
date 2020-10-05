@@ -14,5 +14,16 @@
 
 @push('scripts')
 <script type="text/javascript">
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	console.log('Cannot animate backgound on mobile.');
+} else {
+	$(window).scroll(function() {
+	  let scrollTop = $(this).scrollTop();
+	  let zoom = 100 + (scrollTop / 15);
+
+	  $('#lead-bg').css('background-size', zoom+'%');
+	});
+}
+
 </script>
 @endpush
