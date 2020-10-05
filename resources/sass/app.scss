@@ -1,0 +1,46 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/css/all.min";
+@import "responsive/sm";
+@import "responsive/md";
+@import "responsive/lg";
+@import "responsive/xl";
+
+$brand-primary: #ed1c24;
+
+.btn {
+	border-radius: 0 !important;
+}
+
+.btn-primary {
+	color: white !important;
+	background-color: $brand-primary;
+	border-color: $brand-primary;
+
+	&:hover {
+		color: white !important;
+		background-color: darken($brand-primary, 4%);
+		border-color: darken($brand-primary, 4%);
+	}
+
+	&:active {
+		background-color: darken($brand-primary, 4%);
+		border-color: darken($brand-primary, 4%);
+	}
+}
+
+.btn-outline-white {
+	color: white !important;
+	background-color: transparent;
+	border-color: white;
+
+	&:hover {
+		color: black !important;
+		background-color: white;
+		border-color: white;
+	}
+
+	&:active {
+		background-color: white;
+		border-color: white;
+	}
+}
