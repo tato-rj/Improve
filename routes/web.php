@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('gate', function() {
+	if (request()->pass == 'improve2020')
+		session(['goodtogo' => true]);
+
+	return redirect(route('home'));
+})->name('gate');
+
 Route::get('/', function () {
-    return view('welcome.index');
-});
+	if (session()->has('goodtogo'))
+	    return view('welcome.index');
+
+	return view('gate');
+})->name('home');
