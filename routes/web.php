@@ -21,7 +21,7 @@ Route::post('gate', function() {
 })->name('gate');
 
 Route::get('/', function () {
-	if (session()->has('goodtogo'))
+	if (app()->environment('local') || session()->has('goodtogo'))
 	    return view('welcome.index');
 
 	return view('gate');
