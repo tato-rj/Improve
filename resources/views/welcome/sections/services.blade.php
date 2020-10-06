@@ -1,5 +1,11 @@
 <section class="container mb-6">
-	<h2 class="text-center mb-5"><strong>TESTS & SERVICES</strong></h2>
-	<div class="row">
-	</div>
+	@include('components.service', [
+		'title' => 'Physiology and Biomarker Testing', 
+		'button' => ['label' => 'Schedule a test with an expert', 'icon' => 'calendar-alt'],
+		'image' => 'testing'])
+
+	@include('components.service', [
+		'title' => 'Performance Nutrition Coaching', 
+		'button' => ['label' => 'Start your healthy program now', 'icon' => 'utensils'],
+		'image' => 'services'])
 </section>

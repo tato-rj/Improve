@@ -23,8 +23,8 @@ $brand-primary: #ed1c24;
 	}
 
 	&:active {
-		background-color: darken($brand-primary, 4%);
-		border-color: darken($brand-primary, 4%);
+		background-color: darken($brand-primary, 8%) !important;
+		border-color: darken($brand-primary, 8%) !important;
 	}
 }
 
@@ -42,5 +42,22 @@ $brand-primary: #ed1c24;
 	&:active {
 		background-color: white;
 		border-color: white;
+	}
+}
+
+.btn-outline-primary {
+	color: $brand-primary !important;
+	background-color: transparent;
+	border-color: $brand-primary;
+
+	&:hover {
+		color: white !important;
+		background-color: $brand-primary;
+		border-color: $brand-primary;
+	}
+
+	&:active {
+		background-color: $brand-primary;
+		border-color: $brand-primary;
 	}
 }

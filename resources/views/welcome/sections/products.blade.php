@@ -6,6 +6,6 @@
 		@endforeach
 	</div>
 	<div class="text-center p-3">
-		<a href="" class="link-primary">View all products<i class="fas fa-long-arrow-alt-right ml-2"></i></a>
+		<a href="" class="link-primary">View all products @fa(['icon' => 'long-arrow-alt-right', 'mr' => 0, 'ml' => 1])</a>
 	</div>
 </section>
