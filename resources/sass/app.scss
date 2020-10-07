@@ -23,8 +23,13 @@ $brand-primary: #ed1c24;
 	}
 
 	&:active {
-		background-color: darken($brand-primary, 8%) !important;
-		border-color: darken($brand-primary, 8%) !important;
+		background-color: darken($brand-primary, 8%);
+		border-color: darken($brand-primary, 8%);
+	}
+
+	&:focus {
+		background-color: darken($brand-primary, 12%) !important;
+		border-color: darken($brand-primary, 12%) !important;
 	}
 }
 
@@ -40,8 +45,8 @@ $brand-primary: #ed1c24;
 	}
 
 	&:active {
-		background-color: white;
-		border-color: white;
+		background-color: white !important;
+		border-color: white !important;
 	}
 }
 
@@ -57,7 +62,7 @@ $brand-primary: #ed1c24;
 	}
 
 	&:active {
-		background-color: $brand-primary;
-		border-color: $brand-primary;
+		background-color: $brand-primary !important;
+		border-color: $brand-primary !important;
 	}
 }
