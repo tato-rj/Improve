@@ -4,24 +4,30 @@
 <section class="container-fluid">
   <div class="row">
     <div class="col-11 mx-auto position-relative">
-      <nav class="navbar font-primary navbar-light navbar-expand-lg bg-white w-100 py-4" style="z-index: 10">
-        <a class="navbar-brand" href="#"><img src="{{asset('images/brand/logo-nosub.svg')}}" style="width: 120px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      <nav class="navbar font-primary navbar-light navbar-expand-lg bg-white w-100 py-4 animate__animated" style="z-index: 10">
+        <a class="navbar-brand" href="#"><img data-mobile="{{asset('images/brand/logo-notext.svg')}}" src="{{asset('images/brand/logo-nosub.svg')}}" style="width: 120px"></a>
+        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
+          {{-- <span class="navbar-toggler-icon"></span> --}}
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto mt-3">
             <li class="nav-item px-3">
-              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown px-3">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">What we do</a>
+              <div class="dropdown-menu w-100 rounded-0 border-0 animate__animated animate__fadeInUp animate__faster p-2">
+                <a class="nav-link m-0 pt-1" href="">Testing</a>
+                <a class="nav-link m-0" href="">Services</a>
+              </div>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="#service">Service</a>
+              <a class="nav-link" href="#">Products</a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="#why-us">Why us</a>
-            </li>
-            <li class="nav-item px-3">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
         </div>

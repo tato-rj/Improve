@@ -1,7 +1,7 @@
 <section class="container mb-6">
 	<h2 class="text-center mb-5"><strong>CLIENTS TESTIMONIALS</strong></h2>
 	<div class="row">
-		<div class="col-lg-2 col-md-2 col-6 order-lg-1 order-md-1 order-2 cursor-pointer mb-3" style="min-height: 120px">
+		<div class="col-lg-2 col-md-2 col-6 order-lg-1 order-md-1 order-2 cursor-pointer mb-3 pr-2" style="min-height: 120px">
 			<div class="bg-align-center position-relative h-100" data-toggle="testimonial" data-direction="previous" style="background-image: url({{asset('images/avatars/user1.jpg')}});">
 				<div class="absolute-center" style="z-index: 1; opacity: 0.8">
 					@fa(['icon' => 'long-arrow-alt-left', 'color' => 'white', 'mr' => 0, 'size' => 'lg'])
@@ -20,7 +20,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-2 col-md-2 col-6 order-lg-3 order-md-3 order-3 cursor-pointer mb-3">
+		<div class="col-lg-2 col-md-2 col-6 order-lg-3 order-md-3 order-3 cursor-pointer mb-3 pl-2">
 			<div data-toggle="testimonial" data-direction="next" class="position-relative bg-align-center h-100" style="background-image: url({{asset('images/avatars/user3.jpg')}});">
 				<div class="absolute-center" style="z-index: 1; opacity: 0.8">
 					@fa(['icon' => 'long-arrow-alt-right', 'color' => 'white', 'mr' => 0, 'size' => 'lg'])
