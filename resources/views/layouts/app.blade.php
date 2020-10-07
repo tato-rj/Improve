@@ -257,7 +257,7 @@ left: 50%;
         <footer class="container">
             <div class="row border-top py-4">
                 <div class="col-12 text-muted text-center">
-                    © {{config('app.name')}} 2020
+                    © {{config('app.name')}}
                 </div>
             </div>
         </footer>

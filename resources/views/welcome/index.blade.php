@@ -19,11 +19,11 @@
 $(document).ready(function() {
 	setInterval(function() {
 		changeBackgroundIn('#testing-images');
-	}, 2500);
+	}, 3500);
 
 	setInterval(function() {
 		changeBackgroundIn('#services-images');
-	}, 2123);
+	}, 3123);
 
 	changeTestimonial('next');
 
