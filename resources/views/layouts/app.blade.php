@@ -265,7 +265,14 @@ left: 50%;
         <script src="{{ mix('js/app.js') }}"></script>
         <script type="text/javascript">
             var headH = $('#lead-bg').offset().top + $('#lead-bg').height();
-            var $menu = $('nav.navbar').clone().hide().appendTo('body').addClass('navbar-fixed shadow-sm py-2 animate__fadeInDown').removeClass('py-4');
+            var $menu = $('nav.navbar')
+                            .clone()
+                            .hide()
+                            .appendTo('body')
+                            .addClass('navbar-fixed shadow-sm py-2 animate__fadeInDown')
+                            .removeClass('py-4')
+                            .find('.animate__fadeInUp')
+                            .removeClass('animate__fadeInUp');
             $('nav.navbar-fixed .navbar-brand img').attr('src', $('nav.navbar-fixed .navbar-brand img').data('mobile'));
 
             $(window).scroll(function() {
