@@ -264,6 +264,9 @@ left: 50%;
 
         <script src="{{ mix('js/app.js') }}"></script>
         <script type="text/javascript">
+            if (onMobile())
+                $('.dropdown-menu').removeClass('animate__animated');
+            
             var headH = $('#lead-bg').offset().top + $('#lead-bg').height();
             var $menu = $('nav.navbar')
                             .clone()
@@ -273,7 +276,7 @@ left: 50%;
                             .removeClass('py-4');
 
             $('nav.navbar-fixed .navbar-brand img').attr('src', $('nav.navbar-fixed .navbar-brand img').data('mobile'));
-            $('nav.navbar-fixed .dropdown-menu.animate__fadeInUp').removeClass('animate__fadeInUp');
+
             $(window).scroll(function() {
                 let scrollTop = $(this).scrollTop();
                 
@@ -285,10 +288,9 @@ left: 50%;
             });
 
             $(document).ready(function() {
-  $('button.navbar-toggler').on('click', function () {
-
-    $('.animated-icon2').toggleClass('open');
-  });
+              $('button.navbar-toggler').on('click', function () {
+                $('.animated-icon2').toggleClass('open');
+              });
             });
         </script>
         @stack('scripts')
