@@ -140,7 +140,7 @@
 
         .navbar-fixed .navbar-brand img {
             width: 72px !important;
-            margin-left: 20px;
+            margin-left: 12px;
         }
 
 /* Icon 1 */
