@@ -271,8 +271,9 @@ left: 50%;
                             .appendTo('body')
                             .addClass('navbar-fixed shadow-sm py-2 animate__fadeInDown')
                             .removeClass('py-4');
-            $('nav.navbar-fixed .navbar-brand img').attr('src', $('nav.navbar-fixed .navbar-brand img').data('mobile'));
 
+            $('nav.navbar-fixed .navbar-brand img').attr('src', $('nav.navbar-fixed .navbar-brand img').data('mobile'));
+            $('nav.navbar-fixed .dropdown-menu.animate__fadeInUp').removeClass('animate__fadeInUp');
             $(window).scroll(function() {
                 let scrollTop = $(this).scrollTop();
                 
