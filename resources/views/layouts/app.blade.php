@@ -270,9 +270,7 @@ left: 50%;
                             .hide()
                             .appendTo('body')
                             .addClass('navbar-fixed shadow-sm py-2 animate__fadeInDown')
-                            .removeClass('py-4')
-                            .find('.animate__fadeInUp')
-                            .removeClass('animate__fadeInUp');
+                            .removeClass('py-4');
             $('nav.navbar-fixed .navbar-brand img').attr('src', $('nav.navbar-fixed .navbar-brand img').data('mobile'));
 
             $(window).scroll(function() {
