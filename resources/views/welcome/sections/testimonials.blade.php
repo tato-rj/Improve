@@ -1,5 +1,5 @@
 <section class="container mb-6">
-	<h2 class="text-center mb-5"><strong>CLIENTS TESTIMONIALS</strong></h2>
+	<h2 class="text-center mb-5"><strong>@lang('CLIENTS TESTIMONIALS')</strong></h2>
 	<div class="row">
 		<div class="col-lg-2 col-md-2 col-6 order-lg-1 order-md-1 order-2 cursor-pointer mb-3 pr-2" style="min-height: 120px">
 			<div class="bg-align-center position-relative h-100" data-toggle="testimonial" data-direction="previous" style="background-image: url({{asset('images/avatars/user1.jpg')}});">
@@ -14,9 +14,9 @@
 				<div class="bg-align-center testimonial-image col-4" style="background-image: url({{asset('images/avatars/user2.jpg')}})"></div>
 				<div class="col-8 p-4">
 					<h1>@fa(['icon' => 'quote-left', 'color' => 'primary'])</h1>
-					<p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<p class="testimonial-text">@lang('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua').</p>
 					<h4 class="m-0 testimonial-name">Joe Davis</h4>
-					<div class="text-muted"><small class="testimonial-position">Job description</small></div>
+					<div class="text-muted"><small class="testimonial-position">@lang('Job description')</small></div>
 				</div>
 			</div>
 		</div>

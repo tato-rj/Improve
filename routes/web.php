@@ -2,17 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::post('gate', function() {
 	if (request()->pass == 'improve2020')
 		session(['goodtogo' => true]);
@@ -20,9 +9,34 @@ Route::post('gate', function() {
 	return redirect(route('home'));
 })->name('gate');
 
-Route::get('/', function () {
-	if (app()->environment('local') || session()->has('goodtogo'))
-	    return view('welcome.index');
+Auth::routes();
 
-	return view('gate');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::prefix('products')->name('products.')->group(function() {
+
+	Route::get('', 'ProductsController@index')->name('index');
+
+	Route::get('{product}', 'ProductsController@show')->name('show');
+
+});
+
+Route::prefix('admin')->middleware('auth')->group(function() {
+
+	Route::get('', 'AdminController@index')->name('admin');
+
+	Route::prefix('products')->name('products.')->group(function() {
+
+		Route::get('create', 'ProductsController@create')->name('create');
+
+		Route::get('{product}/edit', 'ProductsController@edit')->name('edit');
+
+		Route::patch('{product}', 'ProductsController@update')->name('update');
+
+		Route::delete('{product}', 'ProductsController@destroy')->name('destroy');
+
+		Route::post('', 'ProductsController@store')->name('store');
+
+	});
+
+});

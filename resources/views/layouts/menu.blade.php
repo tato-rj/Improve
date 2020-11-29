@@ -24,11 +24,18 @@
               </div>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="{{route('home')}}">Products</a>
+              <a class="nav-link" href="{{route('products.index')}}">Products</a>
             </li>
             <li class="nav-item px-3">
               <a class="nav-link" href="{{route('home')}}">Contact</a>
             </li>
+            @auth
+            <li class="nav-item">
+              <a class="nav-link" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>@fa(['icon' => 'sign-out-alt', 'mr' => 0, 'color' => 'primary'])</i>
+              </a>
+            </li>
+            @endauth
           </ul>
         </div>
       </nav>
