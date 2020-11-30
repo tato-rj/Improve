@@ -20,7 +20,7 @@ class Product extends Model
 	{
 		switch (lang()) {
 		  case 'sq':
-		    return $this->name_sq;
+		    return $this->name_sq ?? $this->name_en;
 		    break;
 		  default:
 		    return $this->name_en;
@@ -31,7 +31,7 @@ class Product extends Model
 	{
 		switch (lang()) {
 		  case 'sq':
-		    return $this->headline_sq;
+		    return $this->headline_sq ?? $this->headline_en;
 		    break;
 		  default:
 		    return $this->headline_en;
@@ -42,7 +42,7 @@ class Product extends Model
 	{
 		switch (lang()) {
 		  case 'sq':
-		    return $this->description_sq;
+		    return $this->description_sq ?? $this->description_en;
 		    break;
 		  default:
 		    return $this->description_en;
@@ -53,10 +53,37 @@ class Product extends Model
 	{
 		switch (lang()) {
 		  case 'sq':
-		    return '€' . $this->price_sq;
+		    return $this->price_sq ? '€' . $this->price_sq . '<small>.00</small>' :  '€' . $this->price_en . '<small>.00</small>';
 		    break;
 		  default:
-		    return '$' . $this->price_en;
+		    return '$' . $this->price_en . '<small>.00</small>';
 		}
+	}
+
+	public function scopeRetrieve($query)
+	{
+		switch (request()->sortby) {
+		  case 'newest':
+		    $column = 'created_at';
+		    $order = 'DESC';
+		    break;
+		  case 'oldest':
+		    $column = 'created_at';
+		    $order = 'ASC';
+		    break;
+		  case 'az':
+		    $column = lang() == 'sq' ? 'name_sq' : 'name_en';
+		    $order = 'ASC';
+		    break;
+		  case 'za':
+		    $column = lang() == 'sq' ? 'name_sq' : 'name_en';
+		    $order = 'DESC';
+		    break;
+		  default:
+		    $column = 'created_at';
+		    $order = 'DESC';
+		}
+
+		return $query->orderBy($column, $order)->paginate(6);
 	}
 }

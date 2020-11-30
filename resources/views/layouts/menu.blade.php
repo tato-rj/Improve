@@ -1,7 +1,7 @@
 <div class="bg-primary text-white text-center p-3">
 	<h6 class="m-0 text-uppercase font-weight-bold" style="letter-spacing: .75px">We are open for testing! Schedule your Metabolic Efficiency Test now!</h6>
 </div>
-<section class="container-fluid">
+<section class="container-fluid" id="menu">
   <div class="row">
     <div class="col-11 mx-auto position-relative">
       <nav class="navbar font-primary navbar-light navbar-expand-lg bg-white w-100 py-4 animate__animated" style="z-index: 10">
@@ -30,10 +30,14 @@
               <a class="nav-link" href="{{route('home')}}">Contact</a>
             </li>
             @auth
-            <li class="nav-item">
-              <a class="nav-link" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>@fa(['icon' => 'sign-out-alt', 'mr' => 0, 'color' => 'primary'])</i>
-              </a>
+            <li class="nav-item dropdown px-3">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">@fa(['icon' => 'user'])Admin</a>
+              <div class="dropdown-menu w-100 rounded-0 border-0 animate__animated animate__fadeInUp animate__faster p-2">
+                <a class="nav-link m-0 pt-1" href="{{route('admin')}}">Dashboard</a>
+                <a class="nav-link" href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>Logout</i>
+                </a>
+              </div>
             </li>
             @endauth
           </ul>

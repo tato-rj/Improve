@@ -8,8 +8,8 @@ use App\Models\Product;
 class AdminController extends Controller
 {
     public function index()
-    {
-        $products = Product::latest()->paginate(2);
+    {      
+        $products = Product::retrieve();
 
 		return view('admin.index', compact('products'));
     }

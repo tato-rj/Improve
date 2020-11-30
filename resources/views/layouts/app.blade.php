@@ -247,57 +247,45 @@ left: 50%;
     transform: translate3d(0, 0, 0);
   }
 }
+
+
+    /*PAGINATION*/
+    .page-item:last-child .page-link {border-radius: 0}
+
+    .page-link {
+        /*border: none;*/
+        border-radius: 0 !important;
+        transition: .2s;
+        margin: 2px;
+    }
+
+    .page-item:not(:last-child):not(:first-child) .page-link {border: none;}
+
+    .page-item.active .page-link, .page-item.active .page-link:hover { background-color: #ed1c24 }
+    .page-link, .page-link:hover {color: #ed1c24 }
         </style>
         @stack('header')
     </head>
     <body>
         @include('layouts.menu')
+
         @yield('content')
 
-@if ($errors->any())
-    <div class="alert alert-danger alert-dismissible fade show" style="position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000000;">
-        <ul class="m-0">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-@endif
+        @include('layouts.alerts')        
 
-        @if($message = session('success'))
-            <div class="alert alert-success alert-dismissible fade show" style="position: fixed;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000000;">
-            <strong class="mr-2">Success |  </strong> {{$message}}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-        @endif
-
-        <footer class="container">
-            <div class="row border-top py-4">
-                <div class="col-12 text-muted text-center">
-                    © {{config('app.name')}}
-                </div>
-            </div>
-        </footer>
+        @include('layouts.footer')
 
         <script src="{{ mix('js/app.js') }}"></script>
+        <script type="text/javascript">
+onMobile = function() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+        </script>
         <script type="text/javascript">
             if (onMobile())
                 $('.dropdown-menu').removeClass('animate__animated');
             
-            var headH = $('#lead-bg').offset().top + $('#lead-bg').height();
+            var headH = $('#menu').offset().top + $('#menu').height();
             var $menu = $('nav.navbar')
                             .clone()
                             .hide()
@@ -322,6 +310,14 @@ left: 50%;
                 $('.animated-icon2').toggleClass('open');
               });
             });
+        </script>
+
+        <script type="text/javascript">
+        $('select[name="sortby"]').change(function() {
+            let url = $(this).val();
+            console.log(url);
+            window.location.href = url;
+        });
         </script>
         @stack('scripts')
     </body>

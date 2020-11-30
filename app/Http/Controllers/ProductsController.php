@@ -14,7 +14,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->get();
+        $products = Product::retrieve();
 
         return view('products.index', compact('products'));
     }
@@ -38,11 +38,11 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name_en' => 'required|unique:products,name_en',
+            'name_en' => 'required|unique:products,name_en|max:60',
             'headline_en' => 'required|max:124',
             'description_en' => 'required',
             'price_en' => 'required|integer',
-            'cover_image' => 'required|image'
+            'cover_image' => 'required|image|max:1024'
         ]);
 
         Product::create([
@@ -72,7 +72,7 @@ class ProductsController extends Controller
      */
     public function show(Product $product)
     {
-        $suggestions = Product::where('id', '!=', $product->id)->latest()->take(6)->get();
+        $suggestions = Product::where('id', '!=', $product->id)->latest()->take(4)->get();
 
         return view('products.show', compact(['product', 'suggestions']));
     }
@@ -98,11 +98,11 @@ class ProductsController extends Controller
     public function update(Request $request, Product $product)
     {
         $request->validate([
-            'name_en' => 'required',
+            'name_en' => 'required|max:60',
             'headline_en' => 'required|max:124',
             'description_en' => 'required',
             'price_en' => 'required|integer',
-            'cover_image' => 'sometimes|image'
+            'cover_image' => 'sometimes|image|max:1024'
         ]);
 
 

@@ -13,6 +13,8 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::post('language/{lang}/set', 'HomeController@setLanguage')->name('set-language');
+
 Route::prefix('products')->name('products.')->group(function() {
 
 	Route::get('', 'ProductsController@index')->name('index');

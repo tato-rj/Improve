@@ -21,4 +21,15 @@ class HomeController extends Controller
 
         return view('gate');
     }
+
+    public function setLanguage($lang)
+    {
+        if (in_array($lang, ['en', 'sq'])) {
+            \Session::put('lang', $lang);
+        } else {
+            \Session::forget('lang');
+        }
+
+        return redirect()->back();
+    }
 }
