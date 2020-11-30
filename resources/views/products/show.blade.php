@@ -13,7 +13,7 @@
 		<div class="col-lg-6 col-md-6 col-12 mb-4">
 			<h1>{{$product->name}}</h1>
 			<p class="text-muted mb-4">{{$product->headline}}</p>
-			<p class="mb-4">{{$product->description}}</p>
+			<p style="white-space: pre-wrap;" class="mb-4">{{$product->description}}</p>
 			<h1 class="mb-4">{!! $product->price !!}</h1>
 			<a href="mailto:{{email()}}?
 				subject=My order for {{$product->name}}" class="btn btn-primary">ORDER NOW</a>
