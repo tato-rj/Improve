@@ -10,7 +10,7 @@
 			<img src="{{$product->image}}" class="w-100">
 		</div>
 		<div class="col-lg-10 col-md-9 col-sm-7 col-12 my-2">
-			<div class="text-muted text-right"><small>@fa(['icon' => 'calendar'])created on {{$product->created_at->toFormattedDateString()}}</small></div>
+			<div class="text-muted text-right"><small>@fa(['icon' => 'calendar-alt'])created on {{$product->created_at->toFormattedDateString()}}</small></div>
 			<p><strong>{{$product->name}}</strong></p>
 			<p class="text-muted">{{$product->headline}}</p>
 			<button class="btn btn-outline-secondary" data-toggle="modal" data-target="#delete-modal">@fa(['icon' => 'trash'])Delete product</button>

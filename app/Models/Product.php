@@ -10,6 +10,7 @@ class Product extends Model
     use HasFactory;
 
 	protected $guarded = [];
+	protected $currency = '€';
 
 	public function getImageAttribute()
 	{
@@ -51,12 +52,14 @@ class Product extends Model
 
 	public function getPriceAttribute()
 	{
+		$ext = '<small>.00</small>';
+
 		switch (lang()) {
 		  case 'sq':
-		    return $this->price_sq ? '€' . $this->price_sq . '<small>.00</small>' :  '€' . $this->price_en . '<small>.00</small>';
+		    return $this->price_sq ? $this->currency . $this->price_sq . $ext :  $this->currency . $this->price_en . $ext;
 		    break;
 		  default:
-		    return '$' . $this->price_en . '<small>.00</small>';
+		    return $this->currency . $this->price_en . $ext;
 		}
 	}
 

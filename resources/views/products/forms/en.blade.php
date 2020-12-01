@@ -1,4 +1,4 @@
-<h4>Engligh</h4>
+<h4>English</h4>
 <input type="text" 
 	   name="name_en" 
 	   value="{{$new ? old('name_en') : $product->name_en}}" 
