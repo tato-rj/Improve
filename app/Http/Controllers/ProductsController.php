@@ -42,7 +42,7 @@ class ProductsController extends Controller
             'name_en' => 'required|unique:products,name_en|max:60',
             'headline_en' => 'required|max:124',
             'description_en' => 'required',
-            'price_en' => [
+            'price' => [
                 'required',
                 Rule::notIn(['0,00'])
             ],
@@ -59,8 +59,8 @@ class ProductsController extends Controller
             'description_en' => $request->description_en,
             'description_sq' => $request->description_sq,
 
-            'price_en' => str_replace(',', '',$request->price_en),
-            'price_sq' => str_replace(',', '',$request->price_sq),
+            'price' => str_replace([',', '.'], '',$request->price),
+            'discount' => $discount,
 
             'cover_path' => $request->file('cover_image')->store('products', 'public'),
         ]);
@@ -105,13 +105,12 @@ class ProductsController extends Controller
             'name_en' => 'required|max:60',
             'headline_en' => 'required|max:124',
             'description_en' => 'required',
-            'price_en' => [
+            'price' => [
                 'required',
                 Rule::notIn(['0,00'])
             ],
             'cover_image' => 'sometimes|image|max:1024'
         ]);
-
 
         if ($request->has('cover_image'))
             \Storage::disk('public')->delete($product->cover_path);
@@ -126,8 +125,8 @@ class ProductsController extends Controller
             'description_en' => $request->description_en,
             'description_sq' => $request->description_sq,
 
-            'price_en' => str_replace(',', '',$request->price_en),
-            'price_sq' => str_replace(',', '',$request->price_sq),
+            'price' => str_replace([',', '.'], '',$request->price),
+            'discount' => $request->discount,
 
             'cover_path' => $request->has('cover_image') ? $request->file('cover_image')->store('products', 'public') : $product->cover_path,
         ]);

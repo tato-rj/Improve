@@ -19,7 +19,6 @@
 @push('scripts')
 <script src="{{asset('js/vendor/simple-mask-money.js')}}"></script>
 <script type="text/javascript">
-SimpleMaskMoney.setMask('#price_en');
-SimpleMaskMoney.setMask('#price_sq');
+SimpleMaskMoney.setMask('#price');
 </script>
 @endpush

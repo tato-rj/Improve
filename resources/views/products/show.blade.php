@@ -14,7 +14,10 @@
 			<h1>{{$product->name}}</h1>
 			<p class="text-muted mb-4">{{$product->headline}}</p>
 			<p style="white-space: pre-wrap;" class="mb-4">{{$product->description}}</p>
-			<h1 class="mb-4">{!! $product->price !!}</h1>
+			@if($product->discount)
+			<div class="text-success"><small>ORDER NOW WITH {{$product->discount}}% DISCOUNT!</small></div>
+			@endif
+			<h1 class="mb-4">{!! $product->formattedPrice !!}</h1>
 			<a href="mailto:{{email()}}?
 				subject=My order for {{$product->name}}" class="btn btn-primary">ORDER NOW</a>
 		</div>

@@ -18,16 +18,3 @@
 		  rows="5"
 		  placeholder="Description" class="form-control {{$errors->has('description_en') ? 'is-invalid' : ''}} mb-2"  
 		  required>{{$new ? old('description_en') : $product->description_en}}</textarea>
-
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text">€</span>
-  </div>
-  <input inputmode="numeric"
-  		 name="price_en" 
-  		 value="{{$new ? old('price_en') : $product->price_en}}" 
-  		 placeholder="Price in USD" 
-  		 id="price_en" 
-  		 required
-  		 class="form-control {{$errors->has('price_en') ? 'is-invalid' : ''}}">
-</div>

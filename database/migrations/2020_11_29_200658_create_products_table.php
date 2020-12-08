@@ -19,12 +19,13 @@ class CreateProductsTable extends Migration
             $table->string('name_en');
             $table->string('headline_en');
             $table->text('description_en');
-            $table->unsignedInteger('price_en');
 
             $table->string('name_sq')->nullable();
             $table->string('headline_sq')->nullable();
             $table->text('description_sq')->nullable();
-            $table->unsignedInteger('price_sq')->nullable();
+
+            $table->unsignedInteger('price')->nullable();
+            $table->unsignedInteger('discount')->nullable();
 
             $table->string('cover_path');
 

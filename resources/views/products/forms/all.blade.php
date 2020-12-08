@@ -9,7 +9,39 @@
 		@include('products.forms.sq')
 	</div>
 
-	<div class="col-12">
+	<div class="col-12 mt-3 mb-4 border-top"></div>
+
+  <div class="col">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">€</span>
+      </div>
+      <input inputmode="numeric"
+           name="price" 
+           value="{{$new ? old('price') : $product->price}}" 
+           placeholder="Price in USD" 
+           id="price" 
+           required
+           class="form-control {{$errors->has('price') ? 'is-invalid' : ''}}">
+    </div>
+  </div>
+
+	<div class="col">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">%</span>
+      </div>
+      <input type="number" 
+      		 name="discount" 
+      		 value="{{$new ? old('discount') : $product->discount}}" 
+      		 placeholder="Discount" 
+           min="0"
+           max="100" 
+      		 class="form-control {{$errors->has('discount') ? 'is-invalid' : ''}}">
+    </div>
+	</div>
+
+	<div class="col">
       <div class="custom-file">
         <input name="cover_image" 
         	   type="file" 

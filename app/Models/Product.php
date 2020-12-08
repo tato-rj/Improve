@@ -50,20 +50,27 @@ class Product extends Model
 		}
 	}
 
-	public function getPriceAttribute()
+	public function getFormattedPriceAttribute()
 	{
-		$cents = $this->price_en ? substr($this->price_en, -2) : substr($this->price_sq, -2);
-		$ext = '<small>.'.$cents.'</small>';
+		$price = $this->applyDiscount();
+		
+		$oldPrice = ' <span class="text-red" style="font-size: 65%"><s>'.$this->centsToCurrency($this->price) .'</s></span>';
+		
+		return $this->discount ? $price.$oldPrice : $price;
+	}
 
-		switch (lang()) {
-		  case 'sq':
-		    return $this->price_sq ? 
-		    	$this->currency . substr($this->price_sq, 0, -2) . $ext :  
-		    	$this->currency . substr($this->price_en, 0, -2) . $ext;
-		    break;
-		  default:
-		    return $this->currency . substr($this->price_en, 0, -2) . $ext;
-		}
+	public function applyDiscount()
+	{
+		$discount = $this->price * $this->discount / 100;
+
+		$finalPrice = $this->price - $discount;
+
+		return $this->centsToCurrency($finalPrice);
+	}
+
+	public function centsToCurrency($amount)
+	{
+		return $this->currency . number_format($amount/100, 2);
 	}
 
 	public function scopeRetrieve($query)
