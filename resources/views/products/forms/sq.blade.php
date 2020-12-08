@@ -20,13 +20,10 @@
   <div class="input-group-prepend">
     <span class="input-group-text">€</span>
   </div>
-  <input type="number" 
-  		 min="0" 
-  		 name="price_sq" 
-  		 value="{{$new ? old('price_sq') : $product->price_sq}}" 
-  		 placeholder="Çmimi në EURO" 
-  		 class="form-control {{$errors->has('price-sq') ? 'is-invalid' : ''}}">
-  <div class="input-group-append">
-    <span class="input-group-text">.00</span>
-  </div>
+  <input inputmode="numeric" 
+  		   name="price_sq" 
+  		   value="{{$new ? old('price_sq') : $product->price_sq}}" 
+  		   placeholder="Çmimi në EURO" 
+         id="price_sq" 
+  		   class="form-control {{$errors->has('price-sq') ? 'is-invalid' : ''}}">
 </div>

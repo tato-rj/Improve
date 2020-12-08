@@ -21,16 +21,13 @@
 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
-    <span class="input-group-text">$</span>
+    <span class="input-group-text">€</span>
   </div>
-  <input type="number" 
+  <input inputmode="numeric"
   		 name="price_en" 
-  		 min="0" 
   		 value="{{$new ? old('price_en') : $product->price_en}}" 
   		 placeholder="Price in USD" 
+  		 id="price_en" 
   		 required
   		 class="form-control {{$errors->has('price_en') ? 'is-invalid' : ''}}">
-  <div class="input-group-append">
-    <span class="input-group-text">.00</span>
-  </div>
 </div>

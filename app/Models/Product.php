@@ -52,14 +52,17 @@ class Product extends Model
 
 	public function getPriceAttribute()
 	{
-		$ext = '<small>.00</small>';
+		$cents = $this->price_en ? substr($this->price_en, -2) : substr($this->price_sq, -2);
+		$ext = '<small>.'.$cents.'</small>';
 
 		switch (lang()) {
 		  case 'sq':
-		    return $this->price_sq ? $this->currency . $this->price_sq . $ext :  $this->currency . $this->price_en . $ext;
+		    return $this->price_sq ? 
+		    	$this->currency . substr($this->price_sq, 0, -2) . $ext :  
+		    	$this->currency . substr($this->price_en, 0, -2) . $ext;
 		    break;
 		  default:
-		    return $this->currency . $this->price_en . $ext;
+		    return $this->currency . substr($this->price_en, 0, -2) . $ext;
 		}
 	}
 

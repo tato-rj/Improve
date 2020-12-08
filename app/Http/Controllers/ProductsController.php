@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ProductsController extends Controller
 {
@@ -41,7 +42,10 @@ class ProductsController extends Controller
             'name_en' => 'required|unique:products,name_en|max:60',
             'headline_en' => 'required|max:124',
             'description_en' => 'required',
-            'price_en' => 'required|integer',
+            'price_en' => [
+                'required',
+                Rule::notIn(['0,00'])
+            ],
             'cover_image' => 'required|image|max:1024'
         ]);
 
@@ -55,8 +59,8 @@ class ProductsController extends Controller
             'description_en' => $request->description_en,
             'description_sq' => $request->description_sq,
 
-            'price_en' => $request->price_en,
-            'price_sq' => $request->price_sq,
+            'price_en' => str_replace(',', '',$request->price_en),
+            'price_sq' => str_replace(',', '',$request->price_sq),
 
             'cover_path' => $request->file('cover_image')->store('products', 'public'),
         ]);
@@ -101,7 +105,10 @@ class ProductsController extends Controller
             'name_en' => 'required|max:60',
             'headline_en' => 'required|max:124',
             'description_en' => 'required',
-            'price_en' => 'required|integer',
+            'price_en' => [
+                'required',
+                Rule::notIn(['0,00'])
+            ],
             'cover_image' => 'sometimes|image|max:1024'
         ]);
 
@@ -119,8 +126,8 @@ class ProductsController extends Controller
             'description_en' => $request->description_en,
             'description_sq' => $request->description_sq,
 
-            'price_en' => $request->price_en,
-            'price_sq' => $request->price_sq,
+            'price_en' => str_replace(',', '',$request->price_en),
+            'price_sq' => str_replace(',', '',$request->price_sq),
 
             'cover_path' => $request->has('cover_image') ? $request->file('cover_image')->store('products', 'public') : $product->cover_path,
         ]);
