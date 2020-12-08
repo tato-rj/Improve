@@ -5,6 +5,7 @@
 
 @section('content')
 <section class="container mb-5">
+	<div class="mb-3"><a href="{{route('admin')}}" class="link-primary">@fa(['icon' => 'long-arrow-alt-left'])Return to view all</a></div>
 	<div class="row align-items-center bg-light px-4 py-3 mb-4">
 		<div class="col-lg-2 col-md-3 col-sm-5 col-12 my-2">
 			<img src="{{$product->image}}" class="w-100">
