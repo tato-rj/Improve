@@ -84,7 +84,7 @@ class Product extends Model
 	{
 		foreach($attr as $name => $column) {
 			if ($input == $name)
-				$query->whereNotNull($column)->orWhere($column, '>', 0);
+				$query->whereNotNull($column)->orWhere($column, '!=', '0');
 		}
 	}
 
