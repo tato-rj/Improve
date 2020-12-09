@@ -12,7 +12,7 @@
 
 		<div class="col-lg-6 col-md-6 col-12 mb-4">
 			<h1>{{$product->name}}</h1>
-			<p class="text-muted mb-4">{{$product->headline}}</p>
+			<p class="text-muted border-y py-2 my-3">{{$product->headline}}</p>
 			<p style="white-space: pre-wrap;" class="mb-4">{{$product->description}}</p>
 			@if($product->discount)
 			<div class="text-success"><small>ORDER NOW WITH {{$product->discount}}% DISCOUNT!</small></div>
