@@ -84,7 +84,7 @@ class Product extends Model
 	{
 		foreach($attr as $name => $column) {
 			if ($input == $name)
-				$query->where($column, '!=', 0);
+				$query->where($column, '!=', 0)->orderBy($column, 'DESC');
 		}
 	}
 
