@@ -313,10 +313,11 @@ onMobile = function() {
         </script>
 
         <script type="text/javascript">
-        $('select[name="sortby"]').change(function() {
-            let url = $(this).val();
-            console.log(url);
-            window.location.href = url;
+        $('select[name="sortby"], select[name="view"]').change(function() {
+            $(this).closest('form').submit();
+            // let url = $(this).val();
+            // console.log(url);
+            // window.location.href = url;
         });
         </script>
         @stack('scripts')

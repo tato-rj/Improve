@@ -75,7 +75,22 @@ class Product extends Model
 
 	public function scopeRetrieve($query)
 	{
-		switch (request()->sortby) {
+		return $query->filter(request()->view, ['onsale' => 'discount'])
+					 ->sort(request()->sortby)
+					 ->paginate(6);
+	}
+
+	public function scopeFilter($query, $input, $attr)
+	{
+		foreach($attr as $name => $column) {
+			if ($input == $name)
+				$query->whereNotNull($column);
+		}
+	}
+
+	public function scopeSort($query, $input)
+	{
+		switch ($input) {
 		  case 'newest':
 		    $column = 'created_at';
 		    $order = 'DESC';
@@ -97,6 +112,6 @@ class Product extends Model
 		    $order = 'DESC';
 		}
 
-		return $query->orderBy($column, $order)->paginate(6);
+		$query->orderBy($column, $order);
 	}
 }
