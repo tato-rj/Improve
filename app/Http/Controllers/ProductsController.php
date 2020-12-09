@@ -16,7 +16,7 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Product::retrieve();
-
+        
         return view('products.index', compact('products'));
     }
 
