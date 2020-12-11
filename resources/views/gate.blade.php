@@ -133,7 +133,7 @@
     				<form method="POST" action="{{route('gate')}}">
     					@csrf
     					<img src="{{asset('images/brand/logo-nosub.svg')}}" style="width: 120px" class="mb-4">
-                        <p>We're getting ready to launch soon, stay tuned!</p>
+                        <p>We're getting ready to launch soon.<br>Stay tuned!</p>
     					<input type="password" name="pass" class="form-control mb-3 rounded-0" placeholder="Password here">
     					<button type="submit" class="btn btn-primary btn-block">Submit</button>
     				</form>
