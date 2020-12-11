@@ -31,6 +31,14 @@
         <link href="{{ asset('css/primer.css') }}" rel="stylesheet">
         
         <style type="text/css">
+        .facebook {
+            color: #1877f2;
+        }
+
+        .instagram {
+            color: #c32aa3;
+        }
+
         body {
             font-size: 120%;
         }

@@ -9,3 +9,8 @@ function email()
 {
 	return config('app')['email'];
 }
+
+function improve()
+{
+	return new \App\Brand\Improve;
+}
