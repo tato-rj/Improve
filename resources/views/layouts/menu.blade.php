@@ -1,5 +1,5 @@
 <div class="bg-primary text-white text-center p-3">
-	<h6 class="m-0 text-uppercase font-weight-bold" style="letter-spacing: .75px">We are open for testing! Schedule your Metabolic Efficiency Test now!</h6>
+	<h6 class="m-0 text-uppercase font-weight-bold" style="letter-spacing: .75px">@lang('We are open for testing! Schedule your Metabolic Efficiency Test now!')</h6>
 </div>
 <section class="container-fluid" id="menu">
   <div class="row">
@@ -14,20 +14,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto mt-3">
             <li class="nav-item px-3">
-              <a class="nav-link" href="{{route('home')}}">Home</a>
+              <a class="nav-link" href="{{route('home')}}">@lang('Home')</a>
             </li>
             <li class="nav-item dropdown px-3">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">What we do</a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">@lang('What we do')</a>
               <div class="dropdown-menu w-100 rounded-0 border-0 animate__animated animate__fadeInUp animate__faster p-2">
-                <a class="nav-link m-0 pt-1" href="{{route('home')}}">Testing</a>
-                <a class="nav-link m-0" href="{{route('home')}}">Services</a>
+                <a class="nav-link m-0 pt-1" href="{{route('home')}}">@lang('Performance-related physical fitness')</a>
+                <a class="nav-link m-0" href="{{route('home')}}">@lang('Health-related physical fitness')</a>
+                <a class="nav-link m-0" href="{{route('home')}}">@lang('Long-term athletic development planning & monitoring')</a>
               </div>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="{{route('products.index')}}">Products</a>
+              <a class="nav-link" href="{{route('products.index')}}">@lang('Sports nutrition')</a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="{{route('home')}}">Contact</a>
+              <a class="nav-link" href="{{route('home')}}">@lang('Contact')</a>
             </li>
             @auth
             <li class="nav-item dropdown px-3">

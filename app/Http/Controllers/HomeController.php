@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Brand\Testimonials;
 
 class HomeController extends Controller
 {
@@ -14,10 +15,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $testimonials = (new Testimonials)->get();
         $products = Product::latest()->take(6)->get();
 
         if (app()->environment('local') || session()->has('goodtogo'))
-            return view('welcome.index', compact('products'));
+            return view('welcome.index', compact(['products', 'testimonials']));
 
         return view('gate');
     }

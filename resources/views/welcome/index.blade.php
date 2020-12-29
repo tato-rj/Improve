@@ -25,8 +25,6 @@ $(document).ready(function() {
 		changeBackgroundIn('#services-images');
 	}, 3123);
 
-	changeTestimonial('next');
-
 	$('[data-toggle="testimonial"]').click(function() {
 		changeTestimonial($(this).data('direction'));
 	});
@@ -61,67 +59,40 @@ var needle = 1;
 
 function changeTestimonial(direction)
 {
-	let testimonials = {
-		1: {
-			'name' : 'Mark Ross',
-			'text' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			'position' : 'Marathon runner',
-			'image' : '{{asset('images/avatars/user1.jpg')}}'
-		},
-		2: {
-			'name' : 'Joe Davis',
-			'text' : 'In metus vulputate eu scelerisque. Ullamcorper dignissim cras tincidunt lobortis feugiat!',
-			'position' : 'Lab technician',
-			'image' : '{{asset('images/avatars/user2.jpg')}}'
-		},
-		3: {
-			'name' : 'Joan Reeves',
-			'text' : 'Augue neque gravida in fermentum et. Maecenas ultricies mi eget mauris pharetra et. Facilisi morbi tempus iaculis urna id volutpat lacus.',
-			'position' : 'Journalist',
-			'image' : '{{asset('images/avatars/user3.jpg')}}'
-		},
-		4: {
-			'name' : 'Brian Greene',
-			'text' : 'Arcu cursus euismod quis viverra nibh. Aliquam malesuada bibendum arcu vitae elementum curabitur! Tincidunt eget nullam non nisi.',
-			'position' : 'Engineer',
-			'image' : '{{asset('images/avatars/user4.jpg')}}'
-		},
-		5: {
-			'name' : 'Ashley Jones',
-			'text' : 'Adipiscing vitae proin sagittis nisl rhoncus mattis. Ante in nibh mauris cursus mattis molestie a iaculis.',
-			'position' : 'Athlete',
-			'image' : '{{asset('images/avatars/user5.jpg')}}'
-		}
-	};
-	let max = Object.size(testimonials);
-	let $container = $('#testimonial');
+	let $testimonials = $('#testimonials');
+	let $current = $('#testimonials > div:visible');
+	let $next, $prev;
 
-	direction == 'next' ? needle+=1 : needle-=1;
-
-	if (needle < 1) {
-		needle = max;
-	} else if (needle > max) {
-		needle = 1;
+	if (direction == 'next') {
+		$next = getNext($current);
+		$next.show();
+		updateArrow($next);
+	} else if (direction == 'previous') {
+		$prev = getPrev($current);
+		$prev.show();
+		updateArrow($prev);
 	}
 
-	let before = needle > 1 ? needle - 1 : max;
-	let after = needle < max ? needle + 1 : 1;
-
-	$('[data-toggle="testimonial"][data-direction="previous"]').css('background-image', 'url('+testimonials[before]['image']+')');
-	$('[data-toggle="testimonial"][data-direction="next"]').css('background-image', 'url('+testimonials[after]['image']+')');
-	$('.testimonial-image').css('background-image', 'url('+testimonials[needle]['image']+')');
-	$container.attr('data-testimonial', needle);
-	$container.find('.testimonial-text').text(testimonials[needle]['text']);
-	$container.find('.testimonial-name').text(testimonials[needle]['name']);
-	$container.find('.testimonial-position').text(testimonials[needle]['position']);
+	$current.hide();
 }
 
-Object.size = function(obj) {
-    var size = 0, key;
-    for (key in obj) {
-        if (obj.hasOwnProperty(key)) size++;
-    }
-    return size;
-};
+function updateArrow($current)
+{
+	let $nextThumb = $('[data-direction="next"]');
+	let $prevThumb = $('[data-direction="previous"]');
+
+	$nextThumb.css('background-image', getNext($current).find('.testimonial-image').css('background-image'));
+	$prevThumb.css('background-image', getPrev($current).find('.testimonial-image').css('background-image'));
+}
+
+function getNext($current)
+{
+	return $current.next().length ? $current.next() : $('#testimonials').find('>div').first();
+}
+
+function getPrev($current)
+{
+	return $current.prev().length ? $current.prev() : $('#testimonials').find('>div').last();
+}
 </script>
 @endpush
