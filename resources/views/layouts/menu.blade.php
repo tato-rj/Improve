@@ -45,7 +45,7 @@
               <div class="mr-2">
                 <a class="nav-link px-0" title="Albanian" href="" onclick="event.preventDefault(); document.getElementById('lang-sq').submit();">
                   <form id="lang-sq" action="{{route('set-language', 'sq')}}" method="POST" style="display: none;">@csrf</form>
-                  <span class="rounded flag-icon flag-icon-al"></span>
+                  <span class="rounded flag-icon flag-icon-xk"></span>
                 </a>
               </div>
               <div>
