@@ -41,6 +41,20 @@
               </div>
             </li>
             @endauth
+            <li class="nav-item px-2 d-flex">
+              <div class="mr-2">
+                <a class="nav-link px-0" title="Albanian" href="" onclick="event.preventDefault(); document.getElementById('lang-sq').submit();">
+                  <form id="lang-sq" action="{{route('set-language', 'sq')}}" method="POST" style="display: none;">@csrf</form>
+                  <span class="rounded flag-icon flag-icon-al"></span>
+                </a>
+              </div>
+              <div>
+                <a class="nav-link px-0" title="English" href="" onclick="event.preventDefault(); document.getElementById('lang-en').submit();">
+                  <form id="lang-en" action="{{route('set-language', 'en')}}" method="POST" style="display: none;">@csrf</form>
+                  <span class="rounded flag-icon flag-icon-us"></span>
+                </a> 
+              </div>
+            </li>
           </ul>
         </div>
       </nav>

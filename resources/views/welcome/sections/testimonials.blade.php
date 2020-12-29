@@ -1,5 +1,5 @@
 <section class="container mb-6">
-	<h2 class="text-center mb-5"><strong>@lang('CLIENTS TESTIMONIALS')</strong></h2>
+	<h2 class="text-center text-uppercase mb-5"><strong>@lang('Clients testimonials')</strong></h2>
 	<div class="row">
 		<div class="col-lg-2 col-md-2 col-6 order-lg-1 order-md-1 order-2 cursor-pointer mb-3 pr-2" style="min-height: 120px">
 			<div class="bg-align-center position-relative h-100" data-toggle="testimonial" data-direction="previous" style="background-image: url({{asset(end($testimonials)['image'])}});">
@@ -16,7 +16,7 @@
 					<div class="bg-align-center testimonial-image col-4" style="background-image: url({{asset($testimonial['image'])}})"></div>
 					<div class="col-8 p-4">
 						<h1>@fa(['icon' => 'quote-left', 'color' => 'primary'])</h1>
-						<p class="testimonial-text">@lang($testimonial['text']).</p>
+						<p class="testimonial-text">@lang($testimonial['text'])</p>
 						<h4 class="m-0 testimonial-name">{{$testimonial['name']}}</h4>
 						<div class="text-muted"><small class="testimonial-position">@lang($testimonial['position'])</small></div>
 					</div>

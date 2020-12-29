@@ -6,10 +6,10 @@ class Testimonials
 {
 	protected $testimonials = [
 		[
-			'name' => 'Mark Ross',
-			'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			'position' => 'Marathon runner',
-			'image' => 'images/avatars/user1.jpg'
+			'name' => 'Drin Ferataj',
+			'text' => 'The services and sports nutrition products are of the highest quality, and I see continuous improvement in my performance, in both training and competition.',
+			'position' => 'Volleyball Player',
+			'image' => 'images/avatars/drin-ferataj.jpg'
 		], [
 			'name' => 'Joe Davis',
 			'text' => 'In metus vulputate eu scelerisque. Ullamcorper dignissim cras tincidunt lobortis feugiat!',

@@ -4,8 +4,8 @@
 			<h3 class="accent-bottom mb-4"><strong>@lang('Physiological Testing')</strong></h3>
 			<p class="text-muted">@lang('For a professional athlete, or those striving to be as such, sound training, based on scientific principles, is the only way to reach your potential and achieve your goals.').</p>
 			<p class="text-muted">@lang('We apply physiological testing to determine training parameters and to measure how each athlete is adapting to their customized training plan.').</p>
-			<p class="text-muted">@lang('Depending upon the needs and goals of the client, IMROVE offers several types of tests based on sport specific needs.')</p>
-			<a href="" class="btn btn-primary">@fa(['icon' => 'calendar-alt'])@lang('Schedule a test with an expert')</a>
+			<p class="text-muted">@lang('Depending upon the needs and goals of the client, IMPROVE offers several types of tests based on sport specific needs.')</p>
+			<a href="mailto:{{email()}}" class="btn btn-primary">@fa(['icon' => 'calendar-alt'])@lang('Get in touch')</a>
 		</div>
 
 		<div class="col-lg-4 col-md-4 col-12 mb-4 order-lg-2 order-md-2 order-1" id="testing-images" style="min-height: 240px">
