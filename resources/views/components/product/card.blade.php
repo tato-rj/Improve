@@ -1,4 +1,4 @@
-<div class="{{isset($sm) && $sm ? 'col-lg-3 col-md-3 col-sm-6' : 'col-lg-3 col-md-4 col-sm-6'}} col-12 mb-4">
+<div class="{{isset($sm) && $sm ? 'col-lg-3 col-md-3 col-sm-6' : 'col-lg-4 col-md-4 col-sm-6'}} col-12 mb-4">
 	<a href="{{$route}}" class="link-none">
 		<div class="p-4 border product hover-shadow t-2 position-relative">
 			@include('components.product.discount')

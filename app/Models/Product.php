@@ -77,7 +77,7 @@ class Product extends Model
 	{
 		return $query->filter(request()->view, ['onsale' => 'discount'])
 					 ->sort(request()->sortby)
-					 ->paginate(20);
+					 ->paginate(18);
 	}
 
 	public function scopeFilter($query, $input, $attr)
