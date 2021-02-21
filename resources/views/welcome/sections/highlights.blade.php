@@ -10,7 +10,7 @@
 				<li class="p-2 lead"><i class="fas fa-check mr-2 text-primary"></i>@lang('BASED ON YOUR UNIQUE ATHLETE PROFILE')</li>
 				<li class="p-2 lead"><i class="fas fa-check mr-2 text-primary"></i>@lang('TRAINING PERIOD FOCUSED')</li>
 			</ul>
-			<p>@lang('At IMPROVE you can by and order online professional nutritional supplements of the highest quality that are maximally effective, safe and doping free. We provide state of the art information regarding healthy nutrition, newest and most effective training methodologies for a better health, professional, semiprofessional and recreational athletes. Additionally, we offer testing services for both health- and performance-related testing using advanced equipment of the latest technology.')</p>
+			<p>@lang('At IMPROVE you can buy and order online professional nutritional supplements of the highest quality that are maximally effective, safe and doping free. We provide state of the art information regarding healthy nutrition, newest and most effective training methodologies for a better health, professional, semiprofessional and recreational athletes. Additionally, we offer testing services for both health- and performance-related testing using advanced equipment of the latest technology.')</p>
 		</div>
 	</div>
 </section>
