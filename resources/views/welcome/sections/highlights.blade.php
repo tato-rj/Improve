@@ -13,7 +13,7 @@
 			<p>@lang('At IMPROVE you can buy and order online professional nutritional supplements of the highest quality that are maximally effective, safe and doping free. We provide state of the art information regarding healthy nutrition, newest and most effective training methodologies for a better health, professional, semiprofessional and recreational athletes. Additionally, we offer testing services for both health- and performance-related testing using advanced equipment of the latest technology.')</p>
 		</div>
 		<div class="col-lg-8 col-12 mx-auto text-center">
-			<p class="lead text-uppercase d-inline-block">@lang('Nothing can be more gratifying to an athlete than having everything you need to unlock greatness in one place!')</p>
+			<p class="lead text-primary text-uppercase d-inline-block">@lang('Nothing can be more gratifying to an athlete than having everything you need to unlock greatness in one place!')</p>
 		</div>
 	</div>
 </section>
