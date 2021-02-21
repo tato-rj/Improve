@@ -19,9 +19,9 @@
             <li class="nav-item dropdown px-3">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">@lang('What we do')</a>
               <div class="dropdown-menu w-100 rounded-0 border-0 animate__animated animate__fadeInUp animate__faster p-2">
-                <a class="nav-link m-0 pt-1" href="{{route('home')}}">@lang('Performance-related physical fitness')</a>
-                <a class="nav-link m-0" href="{{route('home')}}">@lang('Health-related physical fitness')</a>
-                <a class="nav-link m-0" href="{{route('home')}}">@lang('Long-term athletic development planning & monitoring')</a>
+                <a class="nav-link m-0 pt-1" href="{{route('home')}}">@lang('Performance')</a>
+                <a class="nav-link m-0" href="{{route('home')}}">@lang('Health')</a>
+                <a class="nav-link m-0" href="{{route('home')}}">@lang('Athletic development')</a>
               </div>
             </li>
             <li class="nav-item px-3">
