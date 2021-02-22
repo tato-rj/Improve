@@ -1,5 +1,5 @@
 <section class="container mb-6">
-	<h2 class="text-center text-uppercase mb-5"><strong>@lang('Clients testimonials')</strong></h2>
+	@title(['title' => 'Clients testimonials', 'position' => 'center'])
 	<div class="row">
 		<div class="col-lg-2 col-md-2 col-6 order-lg-1 order-md-1 order-2 cursor-pointer mb-3 pr-2" style="min-height: 120px">
 			<div class="bg-align-center position-relative h-100" data-toggle="testimonial" data-direction="previous" style="background-image: url({{asset(end($testimonials)['image'])}});">

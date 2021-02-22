@@ -1,0 +1,1 @@
+<h2 class="text-{{$position}} {{isset($accent) && $accent ? 'accent-bottom' : null}} text-uppercase mb-{{$mb ?? 5}}"><strong>@lang($title)</strong></h2>

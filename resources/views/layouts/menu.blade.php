@@ -1,6 +1,8 @@
+<a href="mailto:{{email()}}" class="link-none">
 <div class="bg-primary text-white text-center p-3">
 	<h6 class="m-0 text-uppercase font-weight-bold" style="letter-spacing: .75px">@lang('We are open for testing! Schedule your Metabolic Efficiency Test now!')</h6>
 </div>
+</a>
 <section class="container-fluid" id="menu">
   <div class="row">
     <div class="col-11 mx-auto position-relative">
@@ -19,16 +21,16 @@
             <li class="nav-item dropdown px-3">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">@lang('What we do')</a>
               <div class="dropdown-menu w-100 rounded-0 border-0 animate__animated animate__fadeInUp animate__faster p-2">
-                <a class="nav-link m-0 pt-1" href="{{route('home')}}">@lang('Performance')</a>
-                <a class="nav-link m-0" href="{{route('home')}}">@lang('Health')</a>
-                <a class="nav-link m-0" href="{{route('home')}}">@lang('Athletic development')</a>
+                <a class="nav-link m-0 pt-1" href="{{route('what-we-do.performance')}}">@lang('Performance')</a>
+                <a class="nav-link m-0" href="{{route('what-we-do.health')}}">@lang('Health')</a>
+                <a class="nav-link m-0" href="{{route('what-we-do.development')}}">@lang('Athletic development')</a>
               </div>
             </li>
             <li class="nav-item px-3">
               <a class="nav-link" href="{{route('products.index')}}">@lang('Sports nutrition')</a>
             </li>
             <li class="nav-item px-3">
-              <a class="nav-link" href="{{route('home')}}">@lang('Contact')</a>
+              <a class="nav-link" href="{{route('contact')}}">@lang('Contact')</a>
             </li>
             @auth
             <li class="nav-item dropdown px-3">

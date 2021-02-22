@@ -2,16 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::post('gate', function() {
-	if (request()->pass == 'improve2020')
-		session(['goodtogo' => true]);
-
-	return redirect(route('home'));
-})->name('gate');
-
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('contact', 'HomeController@contact')->name('contact');
 
 Route::post('language/{lang}/set', 'HomeController@setLanguage')->name('set-language');
 
@@ -20,6 +15,16 @@ Route::prefix('products')->name('products.')->group(function() {
 	Route::get('', 'ProductsController@index')->name('index');
 
 	Route::get('{product}', 'ProductsController@show')->name('show');
+
+});
+
+Route::prefix('what-we-do')->name('what-we-do.')->group(function() {
+
+	Route::get('health', 'HomeController@health')->name('health');
+
+	Route::get('performance', 'HomeController@performance')->name('performance');
+
+	Route::get('development', 'HomeController@development')->name('development');
 
 });
 

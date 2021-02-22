@@ -4,7 +4,7 @@
 			<img src="{{asset('images/backgrounds/runner.png')}}" id="runner" style="max-width: 70%">
 		</div>
 		<div class="col-lg-6 col-12 mb-3 p-4">
-			<h2 class="accent-bottom text-uppercase mb-4"><strong>@lang('Fueled for performance')</strong></h2>
+			@title(['title' => 'Fueled for performance', 'position' => 'left', 'accent' => true, 'mb' => 4])
 			<ul class="list-raw">
 				<li class="p-2 lead"><i class="fas fa-check mr-2 text-primary"></i>@lang('PERSONALIZED PERFORMANCE NUTRITION')</li>
 				<li class="p-2 lead"><i class="fas fa-check mr-2 text-primary"></i>@lang('BASED ON YOUR UNIQUE ATHLETE PROFILE')</li>

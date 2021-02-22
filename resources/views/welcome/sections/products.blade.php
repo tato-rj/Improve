@@ -1,5 +1,5 @@
 <section class="container mb-6">
-	<h2 class="text-center text-uppercase mb-5"><strong>@lang('Our products')</strong></h2>
+	@title(['title' => 'Sports nutrition', 'position' => 'center'])
 	<div class="row">
 		@foreach($products as $product)
 		@include('components.product.card', ['label' => 'SHOW NOW', 'route' => route('products.show', $product)])

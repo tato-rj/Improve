@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Brand\Testimonials;
 
 class HomeController extends Controller
 {
@@ -15,13 +14,29 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $testimonials = (new Testimonials)->get();
         $products = Product::latest()->take(6)->get();
 
-        if (app()->environment('local') || session()->has('goodtogo'))
-            return view('welcome.index', compact(['products', 'testimonials']));
+        return view('welcome.index', compact(['products']));
+    }
 
-        return view('gate');
+    public function performance()
+    {
+        return view('what-we-do.performance');
+    }
+
+    public function health()
+    {
+        return view('what-we-do.health');
+    }
+
+    public function development()
+    {
+        return view('what-we-do.development');
+    }
+
+    public function contact()
+    {
+        return view('contact.index');
     }
 
     public function setLanguage($lang)

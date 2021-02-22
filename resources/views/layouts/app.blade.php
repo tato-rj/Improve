@@ -24,6 +24,7 @@
         <meta name="msapplication-TileImage" content="{{asset('ms-icon-144x144.png')}}">
         <meta name="theme-color" content="#ffffff">
 
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
@@ -106,7 +107,7 @@
             background-color: #ed1c24 !important;
         }
 
-        .text-primary {
+        .text-primary, .hover-primary:hover .hover-target {
             color: #ed1c24 !important;
         }
 
@@ -327,6 +328,49 @@ onMobile = function() {
             // console.log(url);
             // window.location.href = url;
         });
+        </script>
+
+        <script type="text/javascript">
+    $('[data-toggle="testimonial"]').click(function() {
+        changeTestimonial($(this).data('direction'));
+    });
+function changeTestimonial(direction)
+{
+    let $testimonials = $('#testimonials');
+    let $current = $('#testimonials > div:visible');
+    let $next, $prev;
+
+    if (direction == 'next') {
+        $next = getNext($current);
+        $next.show();
+        updateArrow($next);
+    } else if (direction == 'previous') {
+        $prev = getPrev($current);
+        $prev.show();
+        updateArrow($prev);
+    }
+
+    $current.hide();
+}
+
+function updateArrow($current)
+{
+    let $nextThumb = $('[data-direction="next"]');
+    let $prevThumb = $('[data-direction="previous"]');
+
+    $nextThumb.css('background-image', getNext($current).find('.testimonial-image').css('background-image'));
+    $prevThumb.css('background-image', getPrev($current).find('.testimonial-image').css('background-image'));
+}
+
+function getNext($current)
+{
+    return $current.next().length ? $current.next() : $('#testimonials').find('>div').first();
+}
+
+function getPrev($current)
+{
+    return $current.prev().length ? $current.prev() : $('#testimonials').find('>div').last();
+}
         </script>
         @stack('scripts')
     </body>

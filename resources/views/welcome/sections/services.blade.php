@@ -1,7 +1,7 @@
 <section class="container mb-6">
 	<div class="row no-gutters py-4">
 		<div class="col-lg-8 col-md-8 col-12 pr-4 mb-4 order-lg-1 order-md-1 order-2">
-			<h3 class="accent-bottom mb-4"><strong>@lang('Physiological Testing')</strong></h3>
+			@title(['title' => 'Physiological Testing', 'position' => 'left', 'accent' => true, 'mb' => 4])
 			<p class="text-muted">@lang('For a professional athlete, or those striving to be as such, sound training, based on scientific principles, is the only way to reach your potential and achieve your goals.').</p>
 			<p class="text-muted">@lang('We apply physiological testing to determine training parameters and to measure how each athlete is adapting to their customized training plan.').</p>
 			<p class="text-muted">@lang('Depending upon the needs and goals of the client, IMPROVE offers several types of tests based on sport specific needs.')</p>

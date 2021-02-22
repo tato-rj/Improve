@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @push('header')
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 @endpush
 
 @section('content')
@@ -25,9 +24,7 @@ $(document).ready(function() {
 		changeBackgroundIn('#services-images');
 	}, 3123);
 
-	$('[data-toggle="testimonial"]').click(function() {
-		changeTestimonial($(this).data('direction'));
-	});
+
 });
 
 $(window).scroll(function() {
@@ -53,46 +50,6 @@ function changeBackgroundIn(element)
 	} else {
 		$(element).find('>div').first().fadeIn();
 	}
-}
-
-var needle = 1;
-
-function changeTestimonial(direction)
-{
-	let $testimonials = $('#testimonials');
-	let $current = $('#testimonials > div:visible');
-	let $next, $prev;
-
-	if (direction == 'next') {
-		$next = getNext($current);
-		$next.show();
-		updateArrow($next);
-	} else if (direction == 'previous') {
-		$prev = getPrev($current);
-		$prev.show();
-		updateArrow($prev);
-	}
-
-	$current.hide();
-}
-
-function updateArrow($current)
-{
-	let $nextThumb = $('[data-direction="next"]');
-	let $prevThumb = $('[data-direction="previous"]');
-
-	$nextThumb.css('background-image', getNext($current).find('.testimonial-image').css('background-image'));
-	$prevThumb.css('background-image', getPrev($current).find('.testimonial-image').css('background-image'));
-}
-
-function getNext($current)
-{
-	return $current.next().length ? $current.next() : $('#testimonials').find('>div').first();
-}
-
-function getPrev($current)
-{
-	return $current.prev().length ? $current.prev() : $('#testimonials').find('>div').last();
 }
 </script>
 @endpush

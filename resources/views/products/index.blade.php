@@ -5,7 +5,7 @@
 
 @section('content')
 <section class="container mb-6">
-	<h2 class="text-center mb-5"><strong>@lang('OUR PRODUCTS')</strong></h2>
+	@title(['title' => 'Sports nutrition', 'position' => 'center'])
 	<div class="row">
 		@include('components.product.filters')
 		
