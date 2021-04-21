@@ -11,10 +11,10 @@ class Testimonials
 			'position' => 'Volleyball Player',
 			'image' => 'images/avatars/drin-ferataj.jpg'
 		], [
-			'name' => 'Joe Davis',
-			'text' => 'Great services and staff, highly recommend them to anyone looking to improve their health and performance.',
-			'position' => 'Lab technician',
-			'image' => 'images/avatars/user2.jpg'
+			'name' => 'Flamur Neziri',
+			'text' => 'I am very pleased with the products at IMPROVE as I am feeling much fresher in the game and training.',
+			'position' => 'Goalkeeper',
+			'image' => 'images/avatars/flamur-neziri.jpg'
 		], [
 			'name' => 'Joan Reeves',
 			'text' => 'The IMPROVE team helped me improve my performance with their traning planning and monitoring. Excellent products as well!',
