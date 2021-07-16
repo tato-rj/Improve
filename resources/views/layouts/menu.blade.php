@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto mt-3">
             <li class="nav-item px-3">
-              <a class="nav-link" href="{{route('home')}}">@lang('Home')</a>
+              <a class="nav-link" href="{{route('home')}}">@lang('Home')e</a>
             </li>
             <li class="nav-item dropdown px-3">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">@lang('What we do')</a>
